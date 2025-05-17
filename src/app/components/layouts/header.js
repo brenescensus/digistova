@@ -28,7 +28,7 @@ export default function Header() {
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Image
-            src="/Assets/images/digilogo.png"
+            src="/Assets/Images/digilogo.png"
             alt="Digistova Logo"
             width={100}
             height={70}
