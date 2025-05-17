@@ -9,6 +9,7 @@ import Hero from "./components/Hero/hero";
 import Service from "./components/Service/service";
 import Project from "./components/Project/project";
 import Footer from "./components/layouts/footer";
+import Contact from "./components/Contact/contact";
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
     <About />
     <Service />
     {/* <Project/> */}
+    <Contact/>
     <Footer/>
     
 

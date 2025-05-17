@@ -14,7 +14,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
-      className="bg-gradient-to-r from-[#2f2923] to-[#2f2923] text-white py-12 px-6"
+      className="bg-gradient-to-r from-[#000000] to-[#2f2923] text-white py-12 px-6"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
         {/* Brand & Newsletter */}
