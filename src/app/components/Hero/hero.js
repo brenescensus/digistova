@@ -41,8 +41,8 @@ Unlock Digital Opportunities           </h1>
           className="flex justify-center"
         >
           <Image
-            src="/Assets/images/va.jpg" // ✅ Replace with your actual image path
-            alt="Virtual Assistant & Engineers"
+            src="/Assets/Images/va.jpg" // ✅ Replace with your actual image path
+            alt="Virtual Assistant "
             width={500}
             height={500}
             className="rounded-xl shadow-lg"
