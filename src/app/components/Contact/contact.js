@@ -20,7 +20,7 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="space-y-6">
             <h3 className="text-4xl font-bold text-[#ffe074]">Get in Touch</h3>
-            <p className="text-white">We'd love to hear from you! Let's build something great together.</p>
+            <p className="text-white">We&apos;d love to hear from you! Let&apos;s build something great together.</p>
             <div className="text-[#ffe074] space-y-2">
               <div className="flex items-center space-x-2">
                 <FaEnvelope  className="text-2xl text-white" />
