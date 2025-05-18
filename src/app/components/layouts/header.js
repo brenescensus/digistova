@@ -20,8 +20,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-        scrolled ? "bg-[#a88f31] text-white shadow-md" : "bg-[#2f2923] text-[#ffbd59] shadow-lg"
+      className={`fixed top-0 left-0 w-full z-50 transition-colors  duration-300 ${
+        scrolled ? "bg-[#2f2923] text-[white] shadow-md" : "bg-[transparent] text-[#ffbd59] shadow-lg"
       }`}
     >
       <div className="max-w-7xl mx-auto px-2  flex justify-between items-center">
