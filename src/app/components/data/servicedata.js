@@ -1,4 +1,6 @@
 // servicesData.js
+import { Camera } from 'lucide-react';
+
 import {
   FaRobot,
   FaPaintBrush,

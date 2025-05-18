@@ -21,9 +21,9 @@ export default function Hero() {
           className="text-left"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-Unlock Digital Opportunities           </h1>
+Unlocking Digital Opportunities           </h1>
           <p className="text-xl text-gray-300 mb-6">
-           Empowering your business with AI-driven automation, expert software solutions, and innovative digital experiences designed to boost efficiency, engagement, and growth.
+           Empowering your business with  expert software solutions, and innovative digital experiences designed to boost efficiency, engagement, and growth.
           </p>
           <a
             href="#contact"

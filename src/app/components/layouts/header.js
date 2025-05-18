@@ -21,14 +21,14 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-        scrolled ? "bg-[#ffbd59] text-white shadow-md" : "bg-white text-[#2f2923] shadow-xl"
+        scrolled ? "bg-[#a88f31] text-white shadow-md" : "bg-[#2f2923] text-[#ffbd59] shadow-lg"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-2  flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Image
-            src="/Assets/Images/digilogo.png"
+            src="/Assets/Images/logoo.png"
             alt="Digistova Logo"
             width={100}
             height={70}

@@ -14,6 +14,28 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Digistova",
   description: " Unlock Digital Opportunities",
+
+  openGraph: {
+    title: "Digistova",
+    description: "Unlocking Digital opportunities.",
+    url: "https://digistova.vercel.app",
+    
+    images: [
+      {
+        url: "/favicon.ico",
+        width: 500,
+        height: 500,
+        alt: "Digistova",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+
+  icons:{
+     icon:"/favicon.ico"
+    },
 };
 
 export default function RootLayout({ children }) {
