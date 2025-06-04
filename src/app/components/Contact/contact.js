@@ -4,9 +4,44 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
+import  { useState } from "react";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function Contact() {
+
+ const [isSubmitting, setIsSubmitting] = useState(false); // For handling multiple submissions
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+
+        access_key: "e63ff081-bf74-47e8-a9a9-e3c47e5b46d3",
+        name: e.target.name.value,
+        email: e.target.email.value,
+        phone: e.target.phone.value,
+        subject: e.target.subject.value,
+        message: e.target.message.value,
+      }),
+    });
+    const result = await response.json();
+    if (result.success) {
+      toast.success("Message sent successfully!"); // Show success toast
+      e.target.reset(); // Clear form fields
+    } else {
+      toast.error("Failed to send message. Please try again."); // Show error toast
+    }
+    setIsSubmitting(false); // Reset submission state
+  }
   return (
    <>
  {/* Contact Section */}
@@ -40,37 +75,55 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <form className="space-y-6 bg-[#1e1b18] p-8 rounded-xl shadow-xl ">
+          <form className="space-y-6 bg-[#1e1b18] p-8 rounded-xl shadow-xl " onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
+              name="name"
                 type="text"
                 placeholder="Your Name"
+                  disabled={isSubmitting}
                 className="w-full p-3 rounded-md bg-[#2f2923] text-white  border-b-white border-b-2 outline-none focus:outline-none "
               />
               <input
+              type="number"
+              name="phone"
+              placeholder="Phone Number"
+                disabled={isSubmitting}
+              className="w-full p-3 rounded-md bg-[#2f2923] text-white  border-b-white border-b-2 outline-none focus:outline-none"
+            />
+             
+            </div>
+             <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
+                  disabled={isSubmitting}
                 className="w-full p-3 rounded-md bg-[#2f2923] text-white  border-b-white border-b-2 outline-none focus:outline-none"
               />
-            </div>
             <input
               type="text"
+              name="subject"
               placeholder="Subject"
+                disabled={isSubmitting}
               className="w-full p-3 rounded-md bg-[#2f2923] text-white  border-b-white border-b-2 outline-none focus:outline-none"
             />
             <textarea
               rows="5"
+              name="message"
               placeholder="Your Message"
+                disabled={isSubmitting}
               className="w-full p-3 rounded-md bg-[#2f2923] text-white  border-b-white border-b-2 outline-none focus:outline-none"
             ></textarea>
             <button
               type="submit"
               className="bg-[#ffe074] hover:bg-red-700 transition px-6 py-3 rounded-md font-semibold text-white shadow-lg"
             >
-              Send Message
+              {/* Send Message */}
+               {isSubmitting ? "Submitting..." : "Send Message"}
             </button>
           </form>
         </motion.div>
+          <ToastContainer className={"text-white border-amber-500"} />
       </section>
    </>
   )
